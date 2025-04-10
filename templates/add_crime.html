@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Crime Record</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Crime Record</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <p>{{ form.name.label }} {{ form.name(size=32) }}</p>
+            <p>{{ form.crime.label }} {{ form.crime(size=32) }}</p>
+            <p>{{ form.date.label }} {{ form.date(size=32) }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html>
