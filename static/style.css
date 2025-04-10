@@ -1,0 +1,22 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('karnataka.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+a {
+    display: inline-block;
+    margin: 10px;
+    color: lightblue;
+    text-decoration: none;
+    font-weight: bold;
+}

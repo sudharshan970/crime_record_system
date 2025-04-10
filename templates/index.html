@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crime Record Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Crime Record Management</h1>
+        <a href="{{ url_for('add_crime') }}">Add Criminal Record</a>
+        <a href="{{ url_for('view_crimes') }}">View Records</a>
+    </div>
+</body>
+</html>
