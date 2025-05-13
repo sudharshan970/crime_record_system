@@ -1,18 +1,23 @@
-
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from forms import CrimeForm
+import secrets
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/crimes.db'
+app = Flask(_name_)
+app.config['SECRET_KEY'] = 'this_should_be_secret_and_random' 
+app.config['SECRET_KEY'] = 'e3f9bcfc4a2e49e4b77a9dd71d9c4c4f'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///crime_records.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
 db = SQLAlchemy(app)
 
 class CrimeRecord(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    crime = db.Column(db.String(100), nullable=False)
-    date = db.Column(db.String(20), nullable=False)
+    name = db.Column(db.String(100))
+    crime = db.Column(db.String(100))
+    date = db.Column(db.String(50))
+
 
 @app.route('/')
 def index():
@@ -37,6 +42,9 @@ def view_crimes():
     crimes = CrimeRecord.query.all()
     return render_template('view_crimes.html', crimes=crimes)
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     app.run(debug=True)
-  
+if _name_ == "_main_":
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
